@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Polifilm, S.A. — Líder en soluciones de manufactura a base de PVC y Polietileno</title>
+<meta name="description" content="Polifilm, S.A. Empresa venezolana con más de 59 años de trayectoria en la fabricación de películas con resina de PVC y polietileno. Empaques, recubrimientos y desarrollo de productos para industria, hogar, farmacéutico y automotriz." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1e;
+  --bg2:#0f1730;
+  --card:#131c3a;
+  --accent:#00d4ff;
+  --accent2:#7c3aed;
+  --accent3:#ff6b35;
+  --text:#e8ecf4;
+  --muted:#9aa6c0;
+  --line:rgba(255,255,255,.08);
+  --glow:0 0 40px rgba(0,212,255,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+section{position:relative;padding:100px 0;overflow:hidden}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  backdrop-filter:blur(12px);
+  background:rgba(10,15,30,.7);
+  border-bottom:1px solid var(--line);
+  transition:all .3s;
+}
+.nav.scrolled{background:rgba(10,15,30,.95);box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1280px;margin:0 auto}
+.logo img{height:44px;filter:drop-shadow(0 0 8px rgba(0,212,255,.4))}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .3s;position:relative}
+.nav-links a:hover{color:#fff}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:10px 22px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;font-size:14px;box-shadow:var(--glow);transition:transform .3s,box-shadow .3s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 0 60px rgba(0,212,255,.6)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  background:radial-gradient(ellipse at 20% 30%,rgba(124,58,237,.25),transparent 50%),
+            radial-gradient(ellipse at 80% 70%,rgba(0,212,255,.2),transparent 50%),
+            var(--bg);
+  padding-top:80px;
+}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.hero-text h1{
+  font-family:'Jost',sans-serif;font-size:clamp(40px,6vw,84px);font-weight:800;line-height:1.05;
+  background:linear-gradient(135deg,#fff 0%,var(--accent) 60%,var(--accent2) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:24px;
+}
+.hero-text .eyebrow{color:var(--accent);font-weight:600;letter-spacing:3px;font-size:13px;text-transform:uppercase;margin-bottom:18px;display:inline-flex;align-items:center;gap:10px}
+.hero-text .eyebrow::before{content:'';width:40px;height:2px;background:var(--accent)}
+.hero-text p{color:var(--muted);font-size:18px;max-width:520px;margin-bottom:36px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:16px 34px;border-radius:999px;
+  font-weight:600;font-size:15px;position:relative;overflow:hidden;transition:all .35s;
+  cursor:pointer;border:none;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;
+  box-shadow:0 8px 30px rgba(0,212,255,.4);
+}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 45px rgba(0,212,255,.6)}
+.btn-ghost{
+  background:rgba(255,255,255,.05);color:#fff;border:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--accent);transform:translateY(-3px)}
+.btn::before{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  transition:left .6s;
+}
+.btn:hover::before{left:100%}
+.hero-visual{position:relative;height:520px}
+.hero-visual .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5}
+.hero-visual .blob.b1{width:300px;height:300px;background:var(--accent2);top:20px;right:40px}
+.hero-visual .blob.b2{width:260px;height:260px;background:var(--accent);bottom:40px;left:20px}
+.hero-slide{
+  position:absolute;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);
+  border:1px solid var(--line);background:#000;
+  transition:transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.hero-slide img{width:100%;height:100%;object-fit:cover}
+.hero-slide.s1{width:260px;height:340px;top:20px;left:40px;transform:rotate(-6deg);z-index:3}
+.hero-slide.s2{width:300px;height:380px;top:60px;left:180px;transform:rotate(3deg);z-index:2}
+.hero-slide.s3{width:240px;height:300px;top:260px;left:60px;transform:rotate(-2deg);z-index:4}
+.hero-visual:hover .s1{transform:rotate(-3deg) translateY(-10px)}
+.hero-visual:hover .s2{transform:rotate(1deg) translateY(-15px)}
+.hero-visual:hover .s3{transform:rotate(1deg) translateY(-8px)}
+.floating-badge{
+  position:absolute;bottom:20px;right:30px;z-index:5;
+  background:rgba(15,23,48,.85);backdrop-filter:blur(10px);border:1px solid var(--line);
+  padding:14px 20px;border-radius:16px;box-shadow:var(--glow);
+}
+.floating-badge .num{font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--accent),#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.floating-badge .lbl{font-size:12px;color:var(--muted)}
+
+/* ---------- STATS ---------- */
+.stats{background:linear-gradient(180deg,var(--bg),var(--bg2));padding:60px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat{text-align:center;padding:30px 10px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.02);transition:transform .4s,box-shadow .4s}
+.stat:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,212,255,.15)}
+.stat .num{font-family:'Jost',sans-serif;font-size:52px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{color:var(--muted);font-size:14px;margin-top:6px}
+
+/* ---------- ABOUT ---------- */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{position:relative;border-radius:24px;overflow:hidden}
+.about-img img{width:100%;height:520px;object-fit:cover;transform:scale(1.1);transition:transform .8s}
+.about-img:hover img{transform:scale(1.18)}
+.about-img .badge{
+  position:absolute;bottom:30px;left:30px;background:linear-gradient(135deg,var(--accent3),#ff3d00);
+  color:#fff;padding:18px 26px;border-radius:18px;font-weight:700;font-size:18px;box-shadow:0 15px 40px rgba(255,107,53,.5);
+}
+.about-text h2{font-family:'Jost',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:800;margin-bottom:20px}
+.about-text h2 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:17px}
+.about-list{list-style:none;margin:24px 0 30px}
+.about-list li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;color:#fff}
+.about-list li::before{content:'✓';width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+
+/* ---------- PRODUCTS ---------- */
+.products{background:var(--bg)}
+.section-head{text-align:center;margin-bottom:60px}
+.section-head .eyebrow{color:var(--accent);font-weight:600;letter-spacing:3px;font-size:13px;text-transform:uppercase;margin-bottom:12px}
+.section-head h2{font-family:'Jost',sans-serif;font-size:clamp(32px,4.5vw,56px);font-weight:800}
+.section-head h2 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-head p{color:var(--muted);max-width:640px;margin:16px auto 0}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.prod-card{
+  position:relative;border-radius:20px;overflow:hidden;background:var(--card);
+  border:1px solid var(--line);transition:transform .45s,box-shadow .45s;cursor:pointer;
+}
+.prod-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 25px 60px rgba(124,58,237,.3)}
+.prod-card .img{height:160px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(124,58,237,.08));padding:20px}
+.prod-card .img img{max-height:120px;object-fit:contain;transition:transform .5s}
+.prod-card:hover .img img{transform:scale(1.15) rotate(-3deg)}
+.prod-card .info{padding:20px}
+.prod-card .info h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.prod-card .info p{color:var(--muted);font-size:13px}
+.prod-card .arrow{
+  position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;
+  transition:all .3s;opacity:0;transform:translateX(10px);
+}
+.prod-card:hover .arrow{opacity:1;transform:translateX(0);background:linear-gradient(135deg,var(--accent),var(--accent2))}
+
+/* ---------- FEATURED PRODUCTS ---------- */
+.featured{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.feat-card{
+  border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);
+  transition:transform .5s;position:relative;
+}
+.feat-card:hover{transform:translateY(-12px)}
+.feat-card .imgwrap{height:260px;overflow:hidden;position:relative}
+.feat-card .imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.feat-card:hover .imgwrap img{transform:scale(1.12)}
+.feat-card .imgwrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,15,30,.9))}
+.feat-card .body{padding:26px}
+.feat-card .tag{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(0,212,255,.15);color:var(--accent);font-size:12px;font-weight:600;margin-bottom:12px}
+.feat-card h3{font-size:22px;font-weight:700;margin-bottom:10px}
+.feat-card p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.feat-card .meta{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--line)}
+.feat-card .meta span{font-size:13px;color:var(--muted)}
+
+/* ---------- PARALLAX BAND ---------- */
+.parallax-band{
+  height:420px;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(135deg,rgba(124,58,237,.4),rgba(0,212,255,.3));
+  position:relative;overflow:hidden;
+}
+.parallax-band .bg{
+  position:absolute;inset:-20%;background:url('https://polifilm.com.ve/es/wp-content/uploads/2025/05/1727876871733.jpg') center/cover;
+  filter:brightness(.35) saturate(1.4);will-change:transform;
+}
+.parallax-band .content{position:relative;z-index:2;padding:0 24px}
+.parallax-band h2{font-family:'Jost',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;margin-bottom:16px}
+.parallax-band p{color:#dfe5f2;font-size:18px;max-width:700px;margin:0 auto 28px}
+
+/* ---------- NEWS ---------- */
+.news{background:var(--bg2)}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.news-card{border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:transform .4s}
+.news-card:hover{transform:translateY(-8px)}
+.news-card .imgwrap{height:220px;overflow:hidden}
+.news-card .imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.news-card:hover .imgwrap img{transform:scale(1.1)}
+.news-card .body{padding:22px}
+.news-card h3{font-size:19px;font-weight:700;margin-bottom:10px;line-height:1.3}
+.news-card p{color:var(--muted);font-size:14px}
+.news-card .read{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:14px;margin-top:14px}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-info h2{font-family:'Jost',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:800;margin-bottom:20px}
+.contact-info p{color:var(--muted);margin-bottom:28px}
+.contact-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px}
+.contact-item .ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.contact-item h4{font-size:15px;font-weight:600;margin-bottom:2px}
+.contact-item span{color:var(--muted);font-size:14px}
+.contact-form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:36px}
+.contact-form h3{font-size:24px;font-weight:700;margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+.field input,.field textarea{
+  width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);
+  background:rgba(255,255,255,.03);color:#fff;font-family:inherit;font-size:14px;outline:none;
+  transition:border-color .3s,box-shadow .3s;
+}
+.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,212,255,.15)}
+.field textarea{min-height:120px;resize:vertical}
+
+/* ---------- FOOTER ---------- */
+footer{background:#060a14;padding:60px 0 30px;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+footer h4{font-size:16px;font-weight:700;margin-bottom:16px}
+footer p{color:var(--muted);font-size:14px}
+footer ul{list-style:none}
+footer ul li{margin-bottom:10px}
+footer ul a{color:var(--muted);font-size:14px;transition:color .3s}
+footer ul a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid var(--line);padding-top:24px;text-align:center;color:var(--muted);font-size:13px}
+
+/* ---------- ANIMATIONS ---------- */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.left{transform:translateX(-60px)}
+.reveal.right{transform:translateX(60px)}
+.reveal.scale{transform:scale(.85)}
+.reveal.in{opacity:1;transform:none}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}
+
+/* parallax elements */
+.parallax{will-change:transform}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:992px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-visual{height:400px;margin-top:20px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid,.news-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(10,15,30,.98);padding:20px;gap:16px;border-bottom:1px solid var(--line)}
+}
+@media(max-width:600px){
+  .prod-grid{grid-template-columns:1fr}
+  .hero-slide.s2,.hero-slide.s3{display:none}
+  section{padding:70px 0}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#home"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/Logo-polifilm.png" alt="Polifilm"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="#destacados">Destacados</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
+    </div>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow reveal">Polifilm, S.A.</div>
+        <h1 class="reveal delay-1">Líder en manufactura a base de PVC y Polietileno</h1>
+        <p class="reveal delay-2">Más de 59 años fabricando películas, empaques y recubrimientos plásticos de alto desempeño para la industria, el hogar, el sector farmacéutico y el automotriz.</p>
+        <div class="hero-btns reveal delay-3">
+          <a href="#productos" class="btn btn-primary">Ver Productos →</a>
+          <a href="#nosotros" class="btn btn-ghost">Conócenos</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob b1 parallax" data-speed="0.05"></div>
+        <div class="blob b2 parallax" data-speed="-0.05"></div>
+        <div class="hero-slide s1"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/1727876871733.jpg" alt=""></div>
+        <div class="hero-slide s2"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/1727876871757.jpg" alt=""></div>
+        <div class="hero-slide s3"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/2-1.png" alt=""></div>
+        <div class="floating-badge">
+          <div class="num">+59</div>
+          <div class="lbl">Años de experiencia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num" data-count="59" data-suffix="+">0</div><div class="lbl">Años de trayectoria</div></div>
+      <div class="stat reveal delay-1"><div class="num" data-count="12" data-suffix="">0</div><div class="lbl">Líneas de producto</div></div>
+      <div class="stat reveal delay-2"><div class="num" data-count="4" data-suffix="">0</div><div class="lbl">Sectores atendidos</div></div>
+      <div class="stat reveal delay-3"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Compromiso calidad</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img reveal left">
+        <img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/rombo.png" alt="Polifilm" class="parallax" data-speed="0.08">
+        <div class="badge">+59 Años</div>
+      </div>
+      <div class="about-text reveal right">
+        <h2>Nosotros: <span>productos y servicios de alta calidad</span></h2>
+        <p>Somos una empresa manufacturera dedicada a la fabricación y comercialización de soluciones de empaque en PVC y Polietileno. Atendemos con excelencia los sectores industrial, doméstico, automotriz y farmacéutico, garantizando productos de alto desempeño bajo un firme compromiso con la mejora continua.</p>
+        <p>Polifilm, S.A. es una empresa venezolana con más de 59 años de trayectoria en la fabricación de películas con resina de PVC y polietileno. Especialistas en empaques, recubrimientos y desarrollo de productos adaptados a las necesidades de cada cliente.</p>
+        <ul class="about-list">
+          <li>Fabricación de películas de PVC y polietileno</li>
+          <li>Empaques y recubrimientos plásticos</li>
+          <li>Desarrollo de productos a medida</li>
+          <li>Atención a industria, hogar, farmacéutico y automotriz</li>
+        </ul>
+        <a href="#productos" class="btn btn-primary">Nuestros Productos →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="productos">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Línea de Productos</div>
+      <h2>Conoce nuestras <span>líneas</span></h2>
+      <p>Selecciona la categoría que mejor se adapte para explorar sus productos.</p>
+    </div>
+    <div class="prod-grid">
+      <!-- 12 categories -->
+      <div class="prod-card reveal delay-1"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/CLEAR-300x319.png" alt=""></div><div class="info"><h3>Comercial Flexible</h3><p>Películas flexibles de PVC para empaque y confección.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-2"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/ARGEL-TANGO-CARAVAN-300x319.png" alt=""></div><div class="info"><h3>Confección Industrial</h3><p>Materiales para confección y manufactura.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-3"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/LINDASOFT-1-300x319.png" alt=""></div><div class="info"><h3>Consumo Masivo</h3><p>Soluciones para consumo masivo.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-4"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/PERCALINA-1-300x319.png" alt=""></div><div class="info"><h3>Empaque Farmacéutico</h3><p>Empaques para el sector farmacéutico.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-1"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/PL-Manufactura-300x319.png" alt=""></div><div class="info"><h3>Envolturas Flexibles</h3><p>Envolturas flexibles de alto desempeño.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-2"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/5-1-300x319.png" alt=""></div><div class="info"><h3>Industrial Rígido</h3><p>Materiales rígidos industriales.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-3"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/6-300x319.png" alt=""></div><div class="info"><h3>Pisos</h3><p>Pisos y recubrimientos.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-4"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/CLEAR-300x319.png" alt=""></div><div class="info"><h3>Tapicería</h3><p>Materiales para tapicería automotriz y hogar.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-1"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/ARGEL-TANGO-CARAVAN-300x319.png" alt=""></div><div class="info"><h3>Marroquinería</h3><p>Materiales para marroquinería.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-2"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/LINDASOFT-1-300x319.png" alt=""></div><div class="info"><h3>Ingeniería y Lonas</h3><p>Lonas e ingeniería.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-3"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/PERCALINA-1-300x319.png" alt=""></div><div class="info"><h3>Laminados y Crudo</h3><p>Laminados y materia prima.</p></div><div class="arrow">→</div></div>
+      <div class="prod-card reveal delay-4"><div class="img"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/PL-Manufactura-300x319.png" alt=""></div><div class="info"><h3>Comercial Flexible+</h3><p>Más soluciones flexibles.</p></div><div class="arrow">→</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX BAND -->
+<section class="parallax-band">
+  <div class="bg parallax" data-speed="0.3"></div>
+  <div class="content reveal">
+    <h2>Calidad que se ve, se siente y se mantiene</h2>
+    <p>Más de 59 años de experiencia respaldan cada rollo, cada lámina y cada solución que fabricamos en Polifilm.</p>
+    <a href="#contacto" class="btn btn-primary">Solicita información →</a>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured" id="destacados">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Productos Destacados</div>
+      <h2>Lo más <span>buscado</span></h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal left">
+        <div class="imgwrap"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/CLEAR.png" alt="CLEAR UV"></div>
+        <div class="body">
+          <span class="tag">Comercial Flexible</span>
+          <h3>CLEAR UV – Cristal Comercial</h3>
+          <p>Película de PVC flexible de excelente transparencia y brillo, ideal para empaque, sellable por alta frecuencia y apta para costura.</p>
+          <div class="meta"><span>Grabado: Liso Brillante</span><span>Transparente</span></div>
+        </div>
+      </div>
+      <div class="feat-card reveal scale delay-1">
+        <div class="imgwrap"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/ARGEL-TANGO-CARAVAN-300x319.png" alt="ARGEL"></div>
+        <div class="body">
+          <span class="tag">Tapicería</span>
+          <h3>ARGEL – CARAVAN – TANGO</h3>
+          <p>Materiales para tapicería de vehículos y hogar, con texturas y acabados premium.</p>
+          <div class="meta"><span>Alta durabilidad</span><span>Premium</span></div>
+        </div>
+      </div>
+      <div class="feat-card reveal right delay-2">
+        <div class="imgwrap"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/LINDASOFT-1-300x319.png" alt="LINDASOFT"></div>
+        <div class="body">
+          <span class="tag">Consumo Masivo</span>
+          <h3>LINDASOFT</h3>
+          <p>Material suave y flexible para múltiples aplicaciones de consumo.</p>
+          <div class="meta"><span>Suave</span><span>Versátil</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news" id="noticias">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Tendencias & Noticias</div>
+      <h2>Últimos <span>post</span></h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal left">
+        <div class="imgwrap"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/Noticiass-web-site-ps1lqq0b9v8b8nlkxyc4mh0emig70ux1jf0c2p94fc.png" alt=""></div>
+        <div class="body"><h3>Tienda Oficial en Mercado Libre</h3><p>En POLIFILM S.A. nos complace anunciar que ahora puedes adquirir directamente nuestros productos a través de nuestra tienda oficial.</p><a class="read" href="#">Leer más →</a></div>
+      </div>
+      <div class="news-card reveal scale delay-1">
+        <div class="imgwrap"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/MASTER-NOTICIAS-TIPS-ph7ve6nal1mh92owlxbfltcdhra0m2jyfgsydizs88.jpg" alt=""></div>
+        <div class="body"><h3>¿Cuál es el Mejor Material para Tapizar un Auto? Conoce TITANIUM</h3><p>Cuando se trata de renovar o personalizar el interior de un vehículo, la elección del material de tapicería es clave.</p><a class="read" href="#">Leer más →</a></div>
+      </div>
+      <div class="news-card reveal right delay-2">
+        <div class="imgwrap"><img src="https://polifilm.com.ve/es/wp-content/uploads/2025/02/BRAVIASMALL.png" alt=""></div>
+        <div class="body"><h3>Tapicería Hogar BRAVIA</h3><p>Cuando se trata de transformar espacios interiores, la elección del material de tapicería es clave.</p><a class="read" href="#">Leer más →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal left">
+        <h2>Hablemos de tu <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">proyecto</span></h2>
+        <p>¿Necesitas materiales, asesoría o cotización? Contáctanos y nuestro equipo te responderá a la brevedad.</p>
+        <div class="contact-item"><div class="ic">📍</div><div><h4>Ubicación</h4><span>Av. Principal con Calle Norte, Galpón Polifilm, Zona Industrial Soco, La Victoria, Aragua, CP 2121</span></div></div>
+        <div class="contact-item"><div class="ic">✉️</div><div><h4>Email</h4><span>info@polifilm.com.ve</span></div></div>
+        <div class="contact-item"><div class="ic">📱</div><div><h4>Redes</h4><span>Facebook · Instagram · WhatsApp</span></div></div>
+      </div>
+      <form class="contact-form reveal right" onsubmit="event.preventDefault();alert('¡Gracias! Te contactaremos pronto.');">
+        <h3>Envíanos un mensaje</h3>
+        <div class="field"><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="tu@email.com" required></div>
+        <div class="field"><label>Mensaje</label><textarea placeholder="Cuéntanos qué necesitas..." required></textarea></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center">Enviar mensaje →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="https://polifilm.com.ve/es/wp-content/uploads/2025/05/logofooter.png" alt="Polifilm" style="height:50px;margin-bottom:16px">
+        <p>Polifilm, S.A. Empresa venezolana con más de 59 años de trayectoria en la fabricación de películas con resina de PVC y polietileno. Especialistas en empaques, recubrimientos y desarrollo de productos adaptados a las necesidades de la industria, hogar, sector farmacéutico y sector automotriz.</p>
+      </div>
+      <div>
+        <h4>Menú</h4>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#productos">Línea de Productos</a></li>
+          <li><a href="#noticias">Tendencias & Noticias</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">Zona Industrial Soco, La Victoria</a></li>
+          <li><a href="mailto:info@polifilm.com.ve">info@polifilm.com.ve</a></li>
+          <li><a href="#">Facebook · Instagram · WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Polifilm S.A. — J000568405 · Todos los derechos reservados</div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+// Burger
+const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// Reveal on scroll
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Counter animation
+const counters=document.querySelectorAll('[data-count]');
+const cio=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el=e.target;const target=+el.dataset.count;const suffix=el.dataset.suffix||'';let v=0;const step=target/60;
+    const t=setInterval(()=>{v+=step;if(v>=target){v=target;clearInterval(t)}el.textContent=Math.floor(v)+suffix},24);
+    cio.unobserve(el);
+  });
+},{threshold:.5});
+counters.forEach(c=>cio.observe(c));
+
+// Parallax
+const parallaxEls=document.querySelectorAll('.parallax');
+let ticking=false;
+function updateParallax(){
+  const sy=window.scrollY;
+  parallaxEls.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    const speed=parseFloat(el.dataset.speed||0.2);
+    const center=rect.top+rect.height/2-window.innerHeight/2;
+    el.style.transform=`translateY(${center*speed}px)`;
+  });
+  ticking=false;
+}
+window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateParallax);ticking=true}});
+updateParallax();
+</script>
+</body>
+</html>
